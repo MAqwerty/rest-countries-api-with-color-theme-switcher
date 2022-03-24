@@ -1,0 +1,81 @@
+:root {
+  --black: rgb(33, 33, 33);
+  --white: #fff;
+  --backround: var(--white);
+  --foreground: var(--black);
+  --transition: 0.5s ease;
+}
+
+.darkmode::before {
+  transform: translateX(0);
+}
+
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.toggle-wrapper {
+  display: block;
+  margin: auto; /* Centering for demo */
+  margin: 10px;
+}
+
+.toggle {
+  height: 33px;
+  width: 60px;
+  background: var(--foreground);
+  border-radius: 40px;
+  position: relative;
+  border: solid 1px rgb(0, 150, 255) ;
+  transition: background var(--transition);
+  cursor: pointer;
+  box-shadow: inset black 0px -1px 7px ,
+              inset black 0px  1px 7px
+}
+
+.toggle::before {
+  content: "";
+  display: block;
+  height: 22px;
+  width: 22px;
+  margin-top: 3px;
+  border-radius: 30px;
+  background: var(--black);
+  border: solid 2px rgb(0, 150, 255);
+  box-shadow: rgb(0, 150, 255) 0px 0px 5px 1px inset ;
+  position: absolute;
+  z-index: 2;
+  transform: translateX(2px);
+  transition: transform var(--transition), background var(--transition);
+}
+
+.toggle.enabled::before {
+  transform: translateX(29px);
+}
+
+.toggle input {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+}
+
+.toggle .icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding:2px;
+}
+
+.toggle .icons svg {
+  fill: var(--background);
+  height: 21px;
+  width: 21px;
+  z-index: 0;
+}
+

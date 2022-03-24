@@ -1,0 +1,40 @@
+.NoPage{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 75px;
+}
+
+.notfound{
+    text-transform: uppercase;
+}
+
+.BackToHome{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: rgb(120, 120, 120);
+    box-shadow: 0px 5px 2px rgb(100,100,100);
+    color: white;
+    height: 50px;
+    border-radius: 7px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 25px;
+    transition: all linear .15s;
+}
+
+.BackToHome:hover{
+    background-color: rgb(80, 80, 80);
+    box-shadow: 0px 5px 2px rgb(50, 50, 50);
+}
+    
+.BackToHome:active{
+    box-shadow: none;
+    transform: translateY(5px);
+}
+    
